@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CloudAssistant — Personal Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <h1>CloudAssistant</h1>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div class="status">Personal assistant • Workers-ready</div>
+          <button id="btn-google-signin" class="inline-btn">Sign in with Google</button>
+          <div id="signed-user" style="font-size:12px;color:var(--muted)"></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <aside class="sidebar">
+          <button data-view="chat" class="active">Chat</button>
+          <button data-view="todos">To‑dos</button>
+          <button data-view="notes">Notes</button>
+          <button data-view="reminders">Reminders</button>
+        </aside>
+
+        <main class="main">
+          <section id="view-chat" class="view">
+            <div id="chat-log" class="chat-log"></div>
+            <form id="chat-form" class="chat-form">
+              <input id="chat-input" placeholder="Ask me anything, or say 'add todo ...'" autocomplete="off" />
+              <button type="submit">Send</button>
+            </form>
+          </section>
+
+          <section id="view-todos" class="view hidden">
+            <h2>To‑dos</h2>
+            <form id="todo-form" class="inline-form">
+              <input id="todo-input" placeholder="Add a to‑do" />
+              <button type="submit">Add</button>
+            </form>
+            <ul id="todo-list" class="list"></ul>
+          </section>
+
+          <section id="view-notes" class="view hidden">
+            <h2>Notes</h2>
+            <textarea id="note-input" placeholder="Write a note..."></textarea>
+            <button id="save-note">Save Note</button>
+            <ul id="notes-list" class="list"></ul>
+          </section>
+
+          <section id="view-reminders" class="view hidden">
+            <h2>Reminders</h2>
+            <form id="reminder-form" class="inline-form">
+              <input id="reminder-text" placeholder="Remind me to..." />
+              <input id="reminder-time" type="datetime-local" />
+              <button type="submit">Schedule</button>
+            </form>
+            <ul id="reminders-list" class="list"></ul>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

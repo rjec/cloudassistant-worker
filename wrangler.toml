@@ -1,0 +1,15 @@
+name = "cloudassistant-worker"
+main = "worker/index.js"
+compatibility_date = "2025-11-16"
+
+# Bindings: create a KV namespace and set its id here or via the Cloudflare dashboard
+kv_namespaces = [
+  { binding = "TOKENS", id = "08fe4c372cbc4dddb8612c62c99985af" }
+]
+
+[vars]
+# Set these via `wrangler secret put` or in the dashboard before publishing
+# GOOGLE_CLIENT_ID = ""
+# GOOGLE_CLIENT_SECRET = ""
+# GEMINI_API_KEY = ""
+# GEMINI_API_URL = "https://api.gemini.example/v1/chat" # replace with real endpoint
